@@ -6,7 +6,8 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: transparent; font-family: 'Calibri', 'Segoe UI', sans-serif; }
-    .cvo-knoppen-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; background: transparent; padding: 0; }
+    .cvo-knoppen-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.8rem; background: transparent; padding: 0; }
+    @media (max-width: 700px) { .cvo-knoppen-grid { grid-template-columns: repeat(2, 1fr); } }
     .cvo-office-knop { display: flex; align-items: center; gap: 0.9rem; padding: 0.9rem 1rem; background-color: #f7f8f6; border: 1px solid #d8d8d8; cursor: pointer; text-decoration: none; color: #000000; position: relative; overflow: hidden; transition: background-color 0.18s ease; }
     .cvo-office-knop:hover { background-color: #e4e6e4; }
     .cvo-office-knop::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; }
