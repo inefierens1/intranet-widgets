@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: transparent; font-family: 'Calibri', 'Segoe UI', sans-serif; }
+    .cvo-knoppen-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; background: transparent; padding: 0; }
+    @media (max-width: 480px) { .cvo-knoppen-grid { gap: 0.6rem; } .cvo-office-knop { gap: 0.6rem; padding: 0.8rem 0.7rem; } }
+    .cvo-office-knop { display: flex; align-items: center; gap: 0.9rem; padding: 0.9rem 1rem; background-color: #f7f8f6; border: 1px solid #d8d8d8; cursor: pointer; text-decoration: none; color: #000000; position: relative; overflow: hidden; transition: background-color 0.18s ease; }
+    .cvo-office-knop:hover { background-color: #e4e6e4; }
+    .cvo-office-knop::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; }
+
+    /* Merkkleuren — linkerbalk */
+    .cvo-knop-roze::before  { background-color: #a28790; }
+    .cvo-knop-groen::before { background-color: #889a91; }
+    .cvo-knop-paars::before { background-color: #4a4247; }
+    .cvo-knop-blauw::before { background-color: #5e91a5; }
+
+    /* Hexagon-vulling per kleur (pastel) */
+    .cvo-knop-roze  .cvo-hex-icon polygon.hex-bg { fill: #dacfd3; }
+    .cvo-knop-groen .cvo-hex-icon polygon.hex-bg { fill: #ced7d2; }
+    .cvo-knop-paars .cvo-hex-icon polygon.hex-bg { fill: #c8c6c7; }
+    .cvo-knop-blauw .cvo-hex-icon polygon.hex-bg { fill: #b3cdc5; }
+
+    .cvo-hex-wrapper { flex-shrink: 0; width: 48px; height: 48px; }
+    .cvo-hex-icon { width: 48px; height: 48px; }
+    .cvo-knop-tekst { display: flex; flex-direction: column; min-width: 0; }
+    .cvo-knop-label { font-family: 'Calibri', 'Segoe UI', sans-serif; font-weight: 700; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.03em; color: #4d5554; line-height: 1.2; overflow-wrap: anywhere; hyphens: auto; }
+  </style>
+</head>
+<body>
+
+<div class="cvo-knoppen-grid">
+
+  <!-- Moodle -->
+  <a href="https://moodle.crescendo-cvo.be/login/index.php" target="_blank" rel="noopener" class="cvo-office-knop cvo-knop-roze">
+    <div class="cvo-hex-wrapper">
+      <svg class="cvo-hex-icon" viewBox="0 0 100 115" xmlns="http://www.w3.org/2000/svg">
+        <polygon class="hex-bg" points="50,2 95,28 95,87 50,113 5,87 5,28"/>
+        <rect x="30" y="38" width="40" height="28" rx="3" fill="none" stroke="#4d5554" stroke-width="4"/>
+        <polygon points="45,46 45,58 56,52" fill="#4d5554"/>
+        <path d="M24,74 L76,74 L70,66 L30,66 Z" fill="none" stroke="#4d5554" stroke-width="4" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="cvo-knop-tekst">
+      <span class="cvo-knop-label">Moodle</span>
+    </div>
+  </a>
+
+  <!-- Ondersteunende teams -->
+  <a href="https://cvocrescendo.sharepoint.com/sites/Ondersteunendeteams" target="_blank" rel="noopener" class="cvo-office-knop cvo-knop-groen">
+    <div class="cvo-hex-wrapper">
+      <svg class="cvo-hex-icon" viewBox="0 0 100 115" xmlns="http://www.w3.org/2000/svg">
+        <polygon class="hex-bg" points="50,2 95,28 95,87 50,113 5,87 5,28"/>
+        <circle cx="41" cy="42" r="8" fill="none" stroke="#4d5554" stroke-width="4"/>
+        <circle cx="62" cy="46" r="6" fill="none" stroke="#4d5554" stroke-width="4"/>
+        <path d="M27,66 Q27,54 41,54 Q52,54 55,61" fill="none" stroke="#4d5554" stroke-width="4" stroke-linecap="round"/>
+        <path d="M57,63 Q57,56 62,56 Q71,56 73,64" fill="none" stroke="#4d5554" stroke-width="4" stroke-linecap="round"/>
+        <polygon points="44,70 46.4,76 53,76.3 47.8,80.5 49.6,87 44,83.2 38.4,87 40.2,80.5 35,76.3 41.6,76" fill="#4d5554"/>
+      </svg>
+    </div>
+    <div class="cvo-knop-tekst">
+      <span class="cvo-knop-label">Ondersteunende teams</span>
+    </div>
+  </a>
+
+  <!-- Opleidingsportaal -->
+  <a href="https://cvocrescendo.sharepoint.com/sites/Opleidingsportaalok" target="_blank" rel="noopener" class="cvo-office-knop cvo-knop-paars">
+    <div class="cvo-hex-wrapper">
+      <svg class="cvo-hex-icon" viewBox="0 0 100 115" xmlns="http://www.w3.org/2000/svg">
+        <polygon class="hex-bg" points="50,2 95,28 95,87 50,113 5,87 5,28"/>
+        <path d="M50,42 Q38,36 24,40 V68 Q38,64 50,70 Q62,64 76,68 V40 Q62,36 50,42 Z" fill="none" stroke="#4d5554" stroke-width="4" stroke-linejoin="round"/>
+        <line x1="50" y1="42" x2="50" y2="70" stroke="#4d5554" stroke-width="4"/>
+      </svg>
+    </div>
+    <div class="cvo-knop-tekst">
+      <span class="cvo-knop-label">Opleidingsportaal</span>
+    </div>
+  </a>
+
+  <!-- Penta -->
+  <a href="https://sgr5.scholengroepportaal.be/" target="_blank" rel="noopener" class="cvo-office-knop cvo-knop-blauw">
+    <div class="cvo-hex-wrapper">
+      <svg class="cvo-hex-icon" viewBox="0 0 100 115" xmlns="http://www.w3.org/2000/svg">
+        <polygon class="hex-bg" points="50,2 95,28 95,87 50,113 5,87 5,28"/>
+        <circle cx="50" cy="52" r="20" fill="none" stroke="#4d5554" stroke-width="4"/>
+        <polyline points="46,42 56,52 46,62" fill="none" stroke="#4d5554" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="cvo-knop-tekst">
+      <span class="cvo-knop-label">Penta</span>
+    </div>
+  </a>
+
+</div>
+
+</body>
+</html>
