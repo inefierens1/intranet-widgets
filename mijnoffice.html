@@ -6,6 +6,8 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { background: transparent; }
+    /* iOS vergroot tekst in iframes automatisch: uitschakelen */
+    html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
     body { font-family: 'Calibri', 'Segoe UI', sans-serif; overflow: hidden; }
 
     .cvo-knoppen-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem; background: transparent; padding: 0; }
@@ -48,8 +50,8 @@
       .cvo-knoppen-grid { grid-template-columns: minmax(0, 1fr); gap: 0.4rem; }
       .cvo-office-knop { min-height: 48px; gap: 0.75rem; padding: 0.35rem 0.8rem 0.35rem 0.9rem; }
       .cvo-hex-wrapper { width: 34px; height: 34px; }
-      .cvo-knop-label { font-size: 0.85rem; overflow-wrap: normal; hyphens: manual; }
-      .cvo-knop-sub { margin-top: 0.05rem; }
+      .cvo-knop-label { font-size: 0.8rem; letter-spacing: 0.01em; line-height: 1.15; overflow-wrap: normal; hyphens: manual; }
+      .cvo-knop-sub { margin-top: 0.05rem; font-size: 0.7rem; }
     }
   </style>
 </head>
