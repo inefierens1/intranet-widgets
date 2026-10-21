@@ -5,10 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: transparent; font-family: 'Calibri', 'Segoe UI', sans-serif; }
-    .cvo-knoppen-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; background: transparent; padding: 0; }
-    .cvo-office-knop { display: flex; align-items: center; gap: 0.9rem; padding: 0.9rem 1rem; background-color: #f7f8f6; border: 1px solid #d8d8d8; cursor: pointer; text-decoration: none; color: #000000; position: relative; overflow: hidden; transition: background-color 0.18s ease; }
-    .cvo-office-knop:hover { background-color: #e4e6e4; }
+    html, body { background: transparent; }
+    body { font-family: 'Calibri', 'Segoe UI', sans-serif; overflow: hidden; }
+
+    .cvo-knoppen-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem; background: transparent; padding: 0; }
+    .cvo-office-knop { display: flex; align-items: center; gap: 0.9rem; min-height: 78px; padding: 0.9rem 1rem; background-color: #f7f8f6; border: 1px solid #d8d8d8; cursor: pointer; text-decoration: none; color: #000000; position: relative; overflow: hidden; transition: background-color 0.18s ease; }
+    .cvo-office-knop:hover, .cvo-office-knop:focus-visible { background-color: #e4e6e4; }
+    .cvo-office-knop:focus-visible { outline: 2px solid #4d5554; outline-offset: -2px; }
     .cvo-office-knop::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; }
 
     /* Merkkleuren — linkerbalk */
@@ -24,9 +27,17 @@
     .cvo-knop-blauw .cvo-hex-icon polygon.hex-bg { fill: #b3cdc5; }
 
     .cvo-hex-wrapper { flex-shrink: 0; width: 48px; height: 48px; }
-    .cvo-hex-icon { width: 48px; height: 48px; }
-    .cvo-knop-tekst { display: flex; flex-direction: column; }
-    .cvo-knop-label { font-family: 'Calibri', 'Segoe UI', sans-serif; font-weight: 700; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.03em; color: #4d5554; line-height: 1.2; }
+    .cvo-hex-icon { display: block; width: 100%; height: 100%; }
+    .cvo-knop-tekst { display: flex; flex-direction: column; min-width: 0; }
+    .cvo-knop-label { font-family: 'Calibri', 'Segoe UI', sans-serif; font-weight: 700; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.03em; color: #4d5554; line-height: 1.2; overflow-wrap: anywhere; hyphens: auto; }
+
+    /* GSM: alle knoppen onder elkaar, compacter zodat alle 9 binnen dezelfde iframe-hoogte passen */
+    @media (max-width: 420px) {
+      .cvo-knoppen-grid { grid-template-columns: minmax(0, 1fr); gap: 0.3rem; }
+      .cvo-office-knop { min-height: 44px; gap: 0.7rem; padding: 0.2rem 0.8rem 0.2rem 0.9rem; }
+      .cvo-hex-wrapper { width: 30px; height: 30px; }
+      .cvo-knop-label { font-size: 0.85rem; overflow-wrap: normal; hyphens: manual; }
+    }
   </style>
 </head>
 <body>
@@ -46,7 +57,7 @@
       </svg>
     </div>
     <div class="cvo-knop-tekst">
-      <span class="cvo-knop-label">Team Aanvangsbegeleiding</span>
+      <span class="cvo-knop-label">Team Aanvangs&shy;begeleiding</span>
     </div>
   </a>
 
@@ -128,7 +139,7 @@
       </svg>
     </div>
     <div class="cvo-knop-tekst">
-      <span class="cvo-knop-label">Team Kwaliteitsontwikkeling</span>
+      <span class="cvo-knop-label">Team Kwaliteits&shy;ontwikkeling</span>
     </div>
   </a>
 
@@ -144,7 +155,7 @@
       </svg>
     </div>
     <div class="cvo-knop-tekst">
-      <span class="cvo-knop-label">Team Onderwijsbeleid</span>
+      <span class="cvo-knop-label">Team Onderwijs&shy;beleid</span>
     </div>
   </a>
 
@@ -160,7 +171,7 @@
       </svg>
     </div>
     <div class="cvo-knop-tekst">
-      <span class="cvo-knop-label">Team Personeelsbeleid</span>
+      <span class="cvo-knop-label">Team Personeels&shy;beleid</span>
     </div>
   </a>
 
