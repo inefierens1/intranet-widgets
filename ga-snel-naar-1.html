@@ -5,11 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: transparent; font-family: 'Calibri', 'Segoe UI', sans-serif; }
-    .cvo-knoppen-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; background: transparent; padding: 0; }
-    @media (max-width: 480px) { .cvo-knoppen-grid { gap: 0.6rem; } .cvo-office-knop { gap: 0.6rem; padding: 0.8rem 0.7rem; } }
-    .cvo-office-knop { display: flex; align-items: center; gap: 0.9rem; padding: 0.9rem 1rem; background-color: #f7f8f6; border: 1px solid #d8d8d8; cursor: pointer; text-decoration: none; color: #000000; position: relative; overflow: hidden; transition: background-color 0.18s ease; }
-    .cvo-office-knop:hover { background-color: #e4e6e4; }
+    html, body { background: transparent; }
+    body { font-family: 'Calibri', 'Segoe UI', sans-serif; overflow: hidden; }
+
+    .cvo-knoppen-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem; background: transparent; padding: 0; }
+    .cvo-office-knop { display: flex; align-items: center; gap: 0.9rem; min-height: 78px; padding: 0.9rem 1rem; background-color: #f7f8f6; border: 1px solid #d8d8d8; cursor: pointer; text-decoration: none; color: #000000; position: relative; overflow: hidden; transition: background-color 0.18s ease; }
+    .cvo-office-knop:hover, .cvo-office-knop:focus-visible { background-color: #e4e6e4; }
+    .cvo-office-knop:focus-visible { outline: 2px solid #4d5554; outline-offset: -2px; }
     .cvo-office-knop::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; }
 
     /* Merkkleuren — linkerbalk */
@@ -25,9 +27,17 @@
     .cvo-knop-blauw .cvo-hex-icon polygon.hex-bg { fill: #b3cdc5; }
 
     .cvo-hex-wrapper { flex-shrink: 0; width: 48px; height: 48px; }
-    .cvo-hex-icon { width: 48px; height: 48px; }
+    .cvo-hex-icon { display: block; width: 100%; height: 100%; }
     .cvo-knop-tekst { display: flex; flex-direction: column; min-width: 0; }
     .cvo-knop-label { font-family: 'Calibri', 'Segoe UI', sans-serif; font-weight: 700; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.03em; color: #4d5554; line-height: 1.2; overflow-wrap: anywhere; hyphens: auto; }
+
+    /* GSM: alle knoppen onder elkaar, compacter zodat ze binnen dezelfde iframe-hoogte passen */
+    @media (max-width: 420px) {
+      .cvo-knoppen-grid { grid-template-columns: minmax(0, 1fr); gap: 0.4rem; }
+      .cvo-office-knop { min-height: 48px; gap: 0.75rem; padding: 0.35rem 0.8rem 0.35rem 0.9rem; }
+      .cvo-hex-wrapper { width: 34px; height: 34px; }
+      .cvo-knop-label { font-size: 0.85rem; overflow-wrap: normal; hyphens: manual; }
+    }
   </style>
 </head>
 <body>
@@ -101,6 +111,24 @@
     </div>
     <div class="cvo-knop-tekst">
       <span class="cvo-knop-label">ICT Helpdesk</span>
+    </div>
+  </a>
+
+  <!-- Personeelsdatabank -->
+  <a href="https://personeel.crescendo-cvo.be/" target="_blank" rel="noopener" class="cvo-office-knop cvo-knop-roze">
+    <div class="cvo-hex-wrapper">
+      <svg class="cvo-hex-icon" viewBox="0 0 100 115" xmlns="http://www.w3.org/2000/svg">
+        <polygon class="hex-bg" points="50,2 95,28 95,87 50,113 5,87 5,28"/>
+        <rect x="24" y="38" width="52" height="36" rx="3" fill="none" stroke="#4d5554" stroke-width="4"/>
+        <circle cx="39" cy="51" r="5.5" fill="none" stroke="#4d5554" stroke-width="3.5"/>
+        <path d="M30,67 Q30,59 39,59 Q48,59 48,67" fill="none" stroke="#4d5554" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="55" y1="50" x2="68" y2="50" stroke="#4d5554" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="55" y1="58" x2="68" y2="58" stroke="#4d5554" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="55" y1="66" x2="63" y2="66" stroke="#4d5554" stroke-width="3.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="cvo-knop-tekst">
+      <span class="cvo-knop-label">Personeels&shy;databank</span>
     </div>
   </a>
 
